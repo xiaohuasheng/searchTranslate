@@ -1,0 +1,22 @@
+{
+  "manifest_version": 2,
+  "name": "Google Search Translator",
+  "version": "1.0",
+  "description": "Translates search terms to English on Google search page",
+  "permissions": [
+    "https://www.google.com/*",
+    "https://www.google.com.hk/*",
+    "https://translate.googleapis.com/*",
+    "tabs"
+  ],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": true
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.google.com/*", "https://www.google.com.hk/*"],
+      "js": ["content.js"]
+    }
+  ]
+}
